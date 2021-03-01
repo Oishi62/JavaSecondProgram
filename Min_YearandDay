@@ -1,0 +1,31 @@
+# JavaSecondProgram
+import java.util.*;
+class Min_YearandDay
+{
+    public static void main()
+    {
+        long min,day,year;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Input the number of minutes ");
+        min=sc.nextLong();
+        Min_YearandDay ob=new Min_YearandDay();
+        day=ob.DayConv(min);
+        year=ob.YearConv(day);
+        day=day-(year*365);// Finding the remaining amount of days
+        System.out.println(min+" minutes is approximately "+year+" years and "+day+" days");
+        
+        
+    }
+    public long DayConv(long m)
+    {
+        long d;
+        d=m/(24*60);//Converting the minutes into days
+        return d;
+    }
+    public long YearConv(long d)
+    {
+       long y=d/365;//Calculating the number of years from days
+       return y;
+    }
+}
+        
